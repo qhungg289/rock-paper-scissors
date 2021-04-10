@@ -1,3 +1,6 @@
+let computerSelection;
+let playerSelection;
+
 function computerPlay(){
     let choices = ['Rock', 'Paper', 'Scissors'];
     let choicesElement = Math.floor(Math.random()*choices.length);
@@ -14,23 +17,20 @@ function playRound(computerSelection, playerSelection){
     }
 }
 
-let computerSelection = computerPlay().toLowerCase();
-let playerSelection;
-
 function game(){
     let playerScore = 0, compScore = 0;
     for (let i = 1; i <= 5; i++){
         playerSelection = prompt('Input your choice (Rock, Paper, Scissors):').toLowerCase();
         computerSelection = computerPlay().toLowerCase();
-        console.log(computerSelection);
+        console.log('Computer\'s choice:', computerSelection);
         console.log(playRound(computerSelection, playerSelection));
 
         if (playRound(computerSelection, playerSelection) == 'Player Win!'){
             playerScore++;
-            console.log(playerScore);
+            console.log('Player\'s score:', playerScore);
         } else if (playRound(computerSelection, playerSelection) == 'Computer Win!'){
             compScore++;
-            console.log(compScore);
+            console.log('Computer\'s score:', compScore);
         }
     }
     
