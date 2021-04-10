@@ -10,7 +10,8 @@ function computerPlay(){
 function playRound(computerSelection, playerSelection){
     if (computerSelection == playerSelection){
         return 'Draw!';
-    } else if ((computerSelection == 'rock' && playerSelection == 'paper') || (computerSelection == 'paper' && playerSelection == 'scissors') || (computerSelection == 'scissors' && playerSelection == 'rock')){
+    } else if ((computerSelection == 'rock' && playerSelection == 'paper') || (computerSelection == 'paper' && playerSelection == 'scissors') 
+            || (computerSelection == 'scissors' && playerSelection == 'rock')){
         return 'Player Win!';
     } else{
         return 'Computer Win!';
