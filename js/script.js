@@ -4,12 +4,43 @@ function computerPlay(){
     return choices[choicesElement];
 }
 
-function playerSelection(){
-
+function playRound(computerSelection, playerSelection){
+    if (computerSelection == playerSelection){
+        return 'Draw!';
+    } else if ((computerSelection == 'rock' && playerSelection == 'paper') || (computerSelection == 'paper' && playerSelection == 'scissors') || (computerSelection == 'scissors' && playerSelection == 'rock')){
+        return 'Player Win!';
+    } else{
+        return 'Computer Win!';
+    }
 }
 
-function gameLoop(computerPlay, playerSelection){
+let computerSelection = computerPlay().toLowerCase();
+let playerSelection;
 
+function game(){
+    let playerScore = 0, compScore = 0;
+    for (let i = 1; i <= 5; i++){
+        playerSelection = prompt('Input your choice (Rock, Paper, Scissors):').toLowerCase();
+        computerSelection = computerPlay().toLowerCase();
+        console.log(computerSelection);
+        console.log(playRound(computerSelection, playerSelection));
+
+        if (playRound(computerSelection, playerSelection) == 'Player Win!'){
+            playerScore++;
+            console.log(playerScore);
+        } else if (playRound(computerSelection, playerSelection) == 'Computer Win!'){
+            compScore++;
+            console.log(compScore);
+        }
+    }
+    
+    if (playerScore > compScore){
+        console.log('Player win with', playerScore, 'score!');
+    } else if (compScore > playerScore){
+        console.log('Computer win with', compScore, 'score!');
+    } else{
+        console.log('Draw!');
+    }
 }
 
-console.log(computerPlay());
+game();
