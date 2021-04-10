@@ -1,3 +1,5 @@
+/* Coded by Quang Hung, April 10th 2021 */
+
 let computerSelection;
 let playerSelection;
 
